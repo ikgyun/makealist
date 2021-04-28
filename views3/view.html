@@ -1,0 +1,16 @@
+{% include "./layout2/top.html" %}
+<h2>뷰ㅜㅜ</h2>
+<ul>
+    <li>글제목</li>
+    <li>{{list1.subject}}</li>
+</ul>
+<ul>
+    <li>작성자</li>
+    <li>{{list1.board_name}}</li>
+</ul>
+<ul>
+    <li>{{list1.content}}</li>
+</ul>
+<a href="/modify"  class="write_btn">수정하기</a>
+<a href="/list?id=${idx}" class="write_btn">다시 리스트</a>
+{% include "./layout2/bottom.html" %}

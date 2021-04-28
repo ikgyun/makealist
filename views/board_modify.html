@@ -4,15 +4,15 @@
         <h2>게시판 글수정 페이지 입니다.</h2>
         <ul>
             <li>글제목</li>
-            <li><input type="text" name="board_subject" value="{{list.subject}}"></li>
+            <li><input type="text" name="mboard_subject" value="{{list[idx].subject}}"></li>
         </ul>
         <ul>
             <li>작성자</li>
-            <li><input type="text" name="board_name" value="{{list.board_name}}"></li>
+            <li><input type="text" name="mboard_name" value="{{list[idx].board_name}}"></li>
         </ul>
         <ul>
             <li>
-                <textarea name="board_content">{{list.content}}</textarea>
+                <textarea name="mboard_content">{{list[idx].content}}</textarea>
             </li>
         </ul>
         <input type="submit" value="글수정" class="write_btn">

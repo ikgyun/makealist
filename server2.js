@@ -4,6 +4,7 @@ const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const app = express();
 const indexRouter = require('./routes');
+
                                    
 app.use(express.static('public')); // 익스프레스야 나   정적파일들은 (public) 안에있는 내용으로 만들꺼야ㅣ.
 app.use(bodyParser.urlencoded({ extended:false, }));
@@ -62,7 +63,7 @@ app.post('/write',(req,res)=>{
     connection.query(`INSERT INTO board (subject,board_name,content,hit) 
                       values('${req.body.board_subject}','${req.body.board_name}','${req.body.board_content}',0);`,(error,results)=>{
                     if(error) throw error;
-                    res.redirect(`/view?idx=${results.insertId}`)
+                   // res.redirect(`/view?idx='${results.insertId}'`)
                     
     })
 });
@@ -79,6 +80,8 @@ app.post('/modify',(req,res)=>{
     let name = req.body.board_name;
     let subject = req.body.board_subject;
     let content = req.body.board_content;
+    sql = 'UPDATE board SET subject='+subject+', board_name='+name+',content='+content+' where idx='+idx;
+    console.log(sql);
     connection.query(`UPDATE board SET subject='${subject}', board_name='${name}',content='${content}' where idx=${idx}`,(error,results)=>{
         if(error) throw error;
         res.redirect('/list');

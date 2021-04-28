@@ -12,13 +12,13 @@
             {% for item in list %}
                 <tr>
                     <td>{{item.idx}}</td>
-                    <td><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></td>
+                    <td><a href="/view?id={{item.idx}}">{{item.subject}}</a></td>
                     <td>{{item.board_name}}</td>
                     <td>{{item.today}}</td>
                     <td>{{item.hit}}</td>
                 </tr>
             {% endfor %}
         </table>
-        <a href='/board/write' class="write_btn">글쓰기</a>
+        <a href='/write' class="write_btn">글쓰기</a>
     </div>
 {% include "./layout/bottom.html" %}

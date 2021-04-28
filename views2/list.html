@@ -1,0 +1,24 @@
+<h2>리스트 화면입니다.</h2>
+<a href="/">첫 화면으로 가기</a>
+
+<div>
+    <table>
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>날짜</td>
+            <td>조회수</td>
+        </tr>
+        {% for item in list %}
+            <tr>
+                <td>{{item.idx}}</td>
+                <td><a href = "/view?idx={{item.idx}}">{{item.subject}}</a></td>
+                <td>{{item.board_name}}</td>
+                <td>{{item.today}}</td>
+                <td>{{item.hit}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href='/write' class="write_btn">글쓰기</a>
+</div>

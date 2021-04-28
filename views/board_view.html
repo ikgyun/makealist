@@ -2,18 +2,18 @@
     <h2>게시판 view 페이지 입니다.</h2>
     <ul>
         <li>글제목</li>
-        <li>{{list.subject}}</li>
+        <li>{{list1[idx-1].subject}}</li>
     </ul>
     <ul>
         <li>작성자</li>
-        <li>{{list.board_name}}</li>
+        <li>{{list1[idx-1].board_name}}</li>
     </ul>
     <ul>
         <li>
-            {{list.content}}
+            {{list1[idx-1].csontent}}
         </li>
     </ul>
-    <a href="/board/list" class="write_btn">리스트가기</a>
-    <a href="/board/modify?idx={{list.idx}}" class="write_btn">수정하기</a>
+    <a href="/list" class="write_btn">리스트가기</a>
+    <a href="/modify?id={{idx}}" class="write_btn">수정하기</a>
 </body>
 {% include "./layout/bottom.html" %}

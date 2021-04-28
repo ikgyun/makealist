@@ -1,0 +1,20 @@
+{% include "./layout2/top.html" %}
+<form action="/write" method="post">
+    <h2>글쓰기 화면입니다.</h2>
+    <ul>
+        <li>글제목</li>
+        <li><input type="text" name="board_subject"></li>
+    </ul>
+    <ul>
+        <li>작성자</li>
+        <li><input type="text" name="board_name"></li>
+    </ul>
+    <ul>
+        <li>
+            <textarea name="board_content"></textarea>
+        </li>
+    </ul>
+    <input type="submit" value="글쓰기" class="write_btn">
+    <a href="/list"  class="write_btn">뒤로가기</a>
+</form>
+{% include "./layout2/bottom.html" %}
